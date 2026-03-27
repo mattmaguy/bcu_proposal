@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/bcu/">
-  <title>BCU Media Investment Simulator</title>
+  <title>BCU  |  JXM  |  PROPOSAL  |  PDX00260327</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1195,6 +1195,82 @@
       line-height: 1.75;
     }
 
+    .system-expand {
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--bd2);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 4rem;
+      align-items: start;
+    }
+    .system-expand-left {}
+    .system-expand-intro {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--t1);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .system-expand-punch {
+      font-size: 0.9375rem;
+      color: var(--t4);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .system-expand-body {
+      font-size: 0.9375rem;
+      color: var(--t3);
+      line-height: 1.75;
+    }
+    .system-expand-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+    }
+    .system-expand-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9375rem;
+      color: var(--t2);
+      line-height: 1.55;
+    }
+    .system-expand-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #5e4ff5;
+      flex-shrink: 0;
+      margin-top: 0.45em;
+    }
+    .system-expand-goal {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .system-expand-goal p {
+      font-size: 0.9375rem;
+      color: var(--t3);
+      line-height: 1.65;
+    }
+    .system-expand-goal p:last-child {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--t1);
+      letter-spacing: -0.01em;
+    }
+    @media (max-width: 680px) {
+      .system-expand { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
     /* ══════════════════════════════════════════
        S4 — APPLICATION
     ══════════════════════════════════════════ */
@@ -2129,6 +2205,26 @@
     </div>
     <div class="system-closing reveal rd3">
       Each layer matters on its own, but exceptional performance comes from how they work together over time.
+    </div>
+
+    <div class="system-expand reveal rd4">
+      <div class="system-expand-left">
+        <p class="system-expand-intro">This system is executed through a coordinated, multi-channel digital campaign.</p>
+        <p class="system-expand-punch">Not a single channel. Not a single tactic.</p>
+        <p class="system-expand-body">A connected ecosystem of channels working together to create sustained presence across the environments where ADA dentists spend their time.</p>
+      </div>
+      <div class="system-expand-right">
+        <ul class="system-expand-list">
+          <li>Paid media across high-attention digital platforms</li>
+          <li>Retargeting systems that reinforce messaging over time</li>
+          <li>Content and creative tailored to each stage of the funnel</li>
+          <li>Cross-channel sequencing to guide users from awareness to conversion</li>
+        </ul>
+        <div class="system-expand-goal">
+          <p>The goal is not isolated performance.</p>
+          <p>The goal is coordinated presence across channels that compounds over time.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
