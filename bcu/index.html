@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/bcu/">
-  <title>BCU x JXM  |  PROPOSAL  |  PDX00260327</title>
+  <title>BCU  |  JXM  |  PROPOSAL  |  PDX00260327</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1195,6 +1195,82 @@
       line-height: 1.75;
     }
 
+    .system-expand {
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--bd2);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 4rem;
+      align-items: start;
+    }
+    .system-expand-left {}
+    .system-expand-intro {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--t1);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .system-expand-punch {
+      font-size: 0.9375rem;
+      color: var(--t4);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .system-expand-body {
+      font-size: 0.9375rem;
+      color: var(--t3);
+      line-height: 1.75;
+    }
+    .system-expand-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+    }
+    .system-expand-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9375rem;
+      color: var(--t2);
+      line-height: 1.55;
+    }
+    .system-expand-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #5e4ff5;
+      flex-shrink: 0;
+      margin-top: 0.45em;
+    }
+    .system-expand-goal {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .system-expand-goal p {
+      font-size: 0.9375rem;
+      color: var(--t3);
+      line-height: 1.65;
+    }
+    .system-expand-goal p:last-child {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--t1);
+      letter-spacing: -0.01em;
+    }
+    @media (max-width: 680px) {
+      .system-expand { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
     /* ══════════════════════════════════════════
        S4 — APPLICATION
     ══════════════════════════════════════════ */
@@ -1651,7 +1727,7 @@
 
       /* General sections */
       .s-section, .s-insight, .s-system, .s-app, .s-levers,
-      .s-phases, .s-validation, .s-team { padding: 3.5rem 1.25rem; }
+      .s-phases, .s-validation, .s-team, .s-nextsteps { padding: 3.5rem 1.25rem; }
       .s-transition { padding: 3rem 1.25rem 2rem; }
       .s-accordion-wrap { padding: 0 1.25rem; }
 
@@ -1839,6 +1915,193 @@
     .platform-icon--lg { height: 46px; }
     .platform-icon--xl { height: 75px; }
 
+    /* ── Next Steps ── */
+    .s-nextsteps {
+      padding: 7rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .s-nextsteps .s-inner { max-width: 960px; margin: 0 auto; }
+
+    .nextsteps-header { text-align: center; margin-bottom: 4.5rem; }
+    .nextsteps-header .s-eyebrow { justify-content: center; }
+    .nextsteps-support {
+      margin-top: 1rem;
+      font-size: 1.0625rem;
+      color: var(--t3);
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.65;
+    }
+
+    /* Timeline track */
+    .nextsteps-timeline {
+      display: grid;
+      grid-template-columns: 1fr 48px 1fr 48px 1fr 48px 1fr;
+      align-items: start;
+      gap: 0;
+      margin-bottom: 4rem;
+    }
+    .nextsteps-connector {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 2.25rem;
+    }
+    .nextsteps-connector-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--bd3) 0%, var(--accent) 100%);
+      position: relative;
+    }
+    .nextsteps-connector-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: -2.5px;
+      box-shadow: 0 0 8px rgba(94,79,245,0.6);
+    }
+
+    /* Step cards */
+    .nextstep-card {
+      background: var(--sf1);
+      border: 1px solid var(--bd2);
+      border-radius: 1.25rem;
+      padding: 1.75rem 1.5rem;
+      position: relative;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+      cursor: default;
+    }
+    .nextstep-card:hover {
+      border-color: var(--bd4);
+      box-shadow: 0 16px 40px -12px rgba(0,0,0,0.45), 0 0 0 1px rgba(94,79,245,0.15);
+      transform: translateY(-3px);
+    }
+    .nextstep-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--bd3);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--t4);
+      letter-spacing: 0.01em;
+      margin-bottom: 1.25rem;
+    }
+    .nextstep-card:hover .nextstep-num {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .nextstep-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .nextstep-title {
+      font-size: 1.0625rem;
+      font-weight: 650;
+      color: var(--t1);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+    .nextstep-desc {
+      font-size: 0.875rem;
+      color: var(--t3);
+      line-height: 1.65;
+    }
+    .nextstep-timing {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--bd1);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--t4);
+      letter-spacing: 0.04em;
+    }
+
+    /* CTA row */
+    .nextsteps-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .nextsteps-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      padding: 0.875rem 2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(94,79,245,0.35);
+    }
+    .nextsteps-cta-primary:hover {
+      background: #4e40d4;
+      box-shadow: 0 6px 28px rgba(94,79,245,0.5);
+      transform: translateY(-1px);
+    }
+    .nextsteps-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--t3);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      padding: 0.875rem 1.5rem;
+      border-radius: 100px;
+      border: 1px solid var(--bd2);
+      background: var(--sf1);
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .nextsteps-cta-secondary:hover {
+      color: var(--t1);
+      border-color: var(--bd3);
+      background: var(--sf2);
+    }
+
+    /* Mobile timeline */
+    @media (max-width: 820px) {
+      .nextsteps-timeline {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .nextsteps-connector {
+        padding-top: 0;
+        padding-left: 1.75rem;
+        justify-content: flex-start;
+        align-items: center;
+        height: 36px;
+      }
+      .nextsteps-connector-line {
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(180deg, var(--bd3) 0%, var(--accent) 100%);
+      }
+      .nextsteps-connector-dot { display: none; }
+    }
+    @media (max-width: 680px) {
+      .s-nextsteps { padding: 4rem 1.25rem; }
+      .nextsteps-header { margin-bottom: 3rem; }
+    }
+
     .site-footer {
       background: var(--bg);
       border-top: 1px solid var(--bd1);
@@ -1941,7 +2204,7 @@
         </a>
         <a class="nsm-item" href="#sec-approach" role="menuitem" data-section="sec-approach">
           <span class="nsm-num">03</span>
-          <span class="nsm-label">Our Approach</span>
+          <span class="nsm-label">Build Demand</span>
         </a>
         <a class="nsm-item" href="#sec-why" role="menuitem" data-section="sec-why">
           <span class="nsm-num">04</span>
@@ -1949,7 +2212,7 @@
         </a>
         <a class="nsm-item" href="#sec-levers" role="menuitem" data-section="sec-levers">
           <span class="nsm-num">05</span>
-          <span class="nsm-label">Strategic Levers</span>
+          <span class="nsm-label">Growth Factors</span>
         </a>
         <a class="nsm-item" href="#sec-audience" role="menuitem" data-section="sec-audience">
           <span class="nsm-num">06</span>
@@ -1957,11 +2220,15 @@
         </a>
         <a class="nsm-item" href="#sec-investment" role="menuitem" data-section="sec-investment">
           <span class="nsm-num">07</span>
-          <span class="nsm-label">Investment Estimator</span>
+          <span class="nsm-label">Pricing Estimator</span>
         </a>
         <a class="nsm-item" href="#sec-team" role="menuitem" data-section="sec-team">
           <span class="nsm-num">08</span>
-          <span class="nsm-label">The Team</span>
+          <span class="nsm-label">JXM Team</span>
+        </a>
+        <a class="nsm-item" href="#sec-nextsteps" role="menuitem" data-section="sec-nextsteps">
+          <span class="nsm-num">09</span>
+          <span class="nsm-label">Next Steps</span>
         </a>
       </div>
     </div>
@@ -1983,14 +2250,14 @@
       <!-- Left: copy -->
       <div class="hero-left">
         <div class="s-eyebrow reveal">JXM x BCU x ADA</div>
-        <h2 class="s-headline reveal rd1">Converting ADA Member Dentists</h2>
-        <p class="hero-subtext reveal rd2">JXM is ready to help BCU reach ADA Members with strategies and campaigns that build awareness, trust, and intention.</p>
+        <h2 class="s-headline reveal rd1">Winning over ADA Member Dentists</h2>
+        <p class="hero-subtext reveal rd2">JXM will help BCU reach ADA Members with campaigns that build awareness, trust, and intent.</p>
         <div class="hero-body reveal rd3">
-          <p>The hard truth is that most financial marketing assumes demand already exists. ADA dentists are not actively searching for financial products at scale. They are busy, specialized, and largely disengaged from traditional acquisition channels.</p>
+          <p>The hard truth: most financial marketing assumes demand already exists. ADA dentists aren't actively searching for financial products at scale. They're busy, specialized, and largely disengaged from traditional channels.</p>
           <p>Which means:</p>
           <div class="hero-pivot">
-            <p>Sustainable growth doesn't come from capturing demand.</p>
-            <p>It comes from building it from the ground up.</p>
+            <p>Sustainable growth will not come from capturing demand.</p>
+            <p>It comes from building it.</p>
           </div>
         </div>
       </div>
@@ -2049,16 +2316,15 @@
   <div class="s-inner">
     <div class="insight-wrap">
       <div class="s-eyebrow reveal">Key Insights</div>
-      <h2 class="s-headline reveal rd1">Why Traditional Media Plans<br>Underperform</h2>
+      <h2 class="s-headline reveal rd1">Why Traditional Media Plans Fail</h2>
       <div class="s-body reveal rd2">
-        <p>Most strategies try to solve this just with better targeting and sometimes even more efficient media buying.</p>
-        <p>We're all for that. But in markets like this, efficiency alone doesn't create growth.</p>
+        <p>Most strategies try to solve this just with better targeting and sometimes even more efficient media buying. We're all for that. But in markets like this, efficiency alone doesn't create growth.</p>
       </div>
       <div class="insight-emphasis reveal rd2">Consistent presence does.</div>
       <div class="s-body reveal rd3">
-        <p>Dentists don't convert because they saw one ad. They convert because your brand shows up consistently across environments — at work, at home, over time — until recognition and trust are established.</p>
+        <p>Dentists won't convert because they saw one ad. They convert because your brand shows up consistently across environments — at work, at home, over time — until recognition and trust are established.</p>
       </div>
-      <div class="insight-closing reveal rd3">Preference and intention is not something to be captured.<br>It is something we need to engineer.</div>
+      <div class="insight-closing reveal rd3">Preference and intention is not just something to be captured.<br>It is something we need to engineer.</div>
     <div class="insight-cards">
       <div class="insight-card reveal rd2">
         <div class="insight-icon">
@@ -2093,7 +2359,7 @@
   <div class="s-inner">
     <div class="system-header">
       <div class="s-eyebrow reveal">Building Demand</div>
-      <h2 class="s-headline reveal rd1">How We Can Build Meaningful Demand with ADA Member Dentists</h2>
+      <h2 class="s-headline reveal rd1">Building Meaningful Demand with ADA Member Dentists</h2>
     </div>
     <div class="system-steps reveal rd2">
       <div class="step-card">
@@ -2102,7 +2368,7 @@
           <span class="step-phase">Awareness</span>
         </div>
         <div class="step-title">Establish Presence</div>
-        <div class="step-body">Show up where attention already exists. Build familiarity and credibility before intent forms.</div>
+        <div class="step-body">Show up where attention exists. Build familiarity and credibility before intent forms.</div>
       </div>
       <div class="step-arrow">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -2113,7 +2379,7 @@
           <span class="step-phase">Consideration</span>
         </div>
         <div class="step-title">Reinforce &amp; Educate</div>
-        <div class="step-body">Stay visible as interest develops. Adapt messaging based on behavior and engagement signals.</div>
+        <div class="step-body">Stay visible as interest develops. Adapt messaging based on behavior and signals.</div>
       </div>
       <div class="step-arrow">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -2124,11 +2390,31 @@
           <span class="step-phase">Conversion</span>
         </div>
         <div class="step-title">Capture Intent</div>
-        <div class="step-body">Be present when action is taken. Remove friction and close the distance to decision.</div>
+        <div class="step-body">Be present when action is taken. Remove friction and close the gap to decision.</div>
       </div>
     </div>
     <div class="system-closing reveal rd3">
       Each layer matters on its own, but exceptional performance comes from how they work together over time.
+    </div>
+
+    <div class="system-expand reveal rd4">
+      <div class="system-expand-left">
+        <p class="system-expand-intro">This system is executed through a coordinated, multi-channel digital campaign.</p>
+        <p class="system-expand-punch">Not a single channel. Not a single tactic.</p>
+        <p class="system-expand-body">A connected digital ecosystem creating sustained presence across the environments where ADA dentists spend time.</p>
+      </div>
+      <div class="system-expand-right">
+        <ul class="system-expand-list">
+          <li>Paid media across high-attention digital platforms</li>
+          <li>Retargeting systems that reinforce messaging over time</li>
+          <li>Content and creative tailored to each stage of the funnel</li>
+          <li>Cross-channel sequencing to guide users from awareness to conversion</li>
+        </ul>
+        <div class="system-expand-goal">
+          <p>The goal is not isolated performance.</p>
+          <p>The goal is coordinated presence that compounds over time.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2139,7 +2425,7 @@
 <section class="s-validation" id="sec-why">
   <div class="s-inner centered">
     <div class="s-eyebrow reveal">Why This Works</div>
-    <h2 class="s-headline reveal rd1">Built for How This Audience<br>Actually Behaves</h2>
+    <h2 class="s-headline reveal rd1">Built for How This Audience Behaves</h2>
     <div class="validation-grid">
       <div class="check-item reveal rd2">
         <div class="check-icon">
@@ -2163,17 +2449,17 @@
         <div class="check-icon">
           <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#49e385" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <span class="check-text">Structured to scale based on real performance data</span>
+        <span class="check-text">Structured to scale based on performance data</span>
       </div>
       <div class="check-item full-w reveal rd4">
         <div class="check-icon">
           <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#49e385" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <span class="check-text">Provides visibility into what's driving actual growth</span>
+        <span class="check-text">Provides visibility into what drives actual growth</span>
       </div>
     </div>
     <div class="validation-closing reveal rd4">
-      <p>We're not guessing and hoping it works.</p>
+      <p>We're not guessing.</p>
       <p>We're building a system that improves as it runs.</p>
     </div>
   </div>
@@ -2184,7 +2470,7 @@
 <!-- S5 — LEVERS -->
 <section class="s-levers" id="sec-levers">
   <div class="s-inner">
-    <div class="s-eyebrow reveal">Three Factors</div>
+    <div class="s-eyebrow reveal">Growth Factors</div>
     <h2 class="s-headline reveal rd1">How Aggressively Do You<br>Want to Grow?</h2>
     <p class="levers-intro reveal rd2">Three Factors determine how much pressure the system needs to generate. As each expands, the system requires more reach, more frequency, and more coordination to perform effectively.</p>
   </div>
@@ -2497,9 +2783,9 @@
           <span class="grad">get started.</span>
         </h2>
         <div class="team-body">
-          <p>There's a lot you could say about X. It's a factor. It comes before why. Around here, X is the power that forms when strategy, creativity, media, and ops come together with purpose.</p>
+          <p>You could say a lot about X. It's a factor. It comes before why. Around here, X is the power that forms when strategy, creativity, media, and ops come together with purpose.</p>
           <p>The partners at JXM have been building together for over a decade, forming a tightly integrated leadership core across business strategy, media, creative, and operations. Each of us owns our domain, but the combination makes the magic.</p>
-          <p>Like an 1980s team-up robot anime, we lock into place to form the X in JXM.</p>
+          <p>Like Voltron, we lock into place to form the X in JXM.</p>
           <p>We're not interchangeable. We're interdependent. That's how we've grown this firm and kept it scrappy, hungry, and fiercely effective.</p>
         </div>
       </div>
@@ -2560,6 +2846,80 @@
   </div>
 </section>
 
+
+<!-- ═══════ NEXT STEPS ═══════ -->
+<section class="s-nextsteps" id="sec-nextsteps">
+  <div class="s-inner">
+
+    <div class="nextsteps-header reveal">
+      <div class="s-eyebrow has-icon">Next Steps</div>
+      <h2 class="s-headline">From Strategy to Live System</h2>
+      <p class="nextsteps-support">We move from alignment to execution quickly — launching campaigns and generating early signals within weeks.</p>
+    </div>
+
+    <div class="nextsteps-timeline">
+
+      <!-- Step 1 -->
+      <div class="nextstep-card reveal rd1">
+        <div class="nextstep-num">01</div>
+        <div class="nextstep-label">Alignment</div>
+        <div class="nextstep-title">Lock Scope &amp; Priorities</div>
+        <div class="nextstep-desc">Confirm audience, markets, and product focus. Finalize initial investment range.</div>
+        <div class="nextstep-timing">Week 1–2</div>
+      </div>
+
+      <!-- Connector -->
+      <div class="nextsteps-connector" aria-hidden="true">
+        <div class="nextsteps-connector-line"></div>
+        <div class="nextsteps-connector-dot"></div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="nextstep-card reveal rd2">
+        <div class="nextstep-num">02</div>
+        <div class="nextstep-label">System Setup</div>
+        <div class="nextstep-title">Launch the Engine</div>
+        <div class="nextstep-desc">Deploy campaigns, tracking, creative, and channel mix across the full funnel.</div>
+        <div class="nextstep-timing">Week 2–4</div>
+      </div>
+
+      <!-- Connector -->
+      <div class="nextsteps-connector" aria-hidden="true">
+        <div class="nextsteps-connector-line"></div>
+        <div class="nextsteps-connector-dot"></div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="nextstep-card reveal rd3">
+        <div class="nextstep-num">03</div>
+        <div class="nextstep-label">Go Live</div>
+        <div class="nextstep-title">Generate Signal</div>
+        <div class="nextstep-desc">Campaigns go live. Early performance data begins informing optimization.</div>
+        <div class="nextstep-timing">Month 1+</div>
+      </div>
+
+      <!-- Connector -->
+      <div class="nextsteps-connector" aria-hidden="true">
+        <div class="nextsteps-connector-line"></div>
+        <div class="nextsteps-connector-dot"></div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="nextstep-card reveal rd4">
+        <div class="nextstep-num">04</div>
+        <div class="nextstep-label">Optimization</div>
+        <div class="nextstep-title">Improve &amp; Scale</div>
+        <div class="nextstep-desc">The system refines itself based on performance — increasing efficiency over time.</div>
+        <div class="nextstep-timing">Ongoing</div>
+      </div>
+
+    </div><!-- /nextsteps-timeline -->
+
+
+  </div>
+</section>
+
+<div class="s-divider"></div>
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="site-footer">
@@ -2989,6 +3349,7 @@
       { id: 'sec-audience',   el: document.getElementById('sec-audience') },
       { id: 'sec-investment', el: document.getElementById('sec-investment') },
       { id: 'sec-team',       el: document.getElementById('sec-team') },
+      { id: 'sec-nextsteps',  el: document.getElementById('sec-nextsteps') },
     ].filter(function(s) { return s.el; });
 
     function setActive(id) {
