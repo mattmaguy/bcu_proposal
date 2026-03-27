@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/bcu/">
-  <title>BCU Media Investment Simulator</title>
+  <title>BCU  |  JXM  |  PROPOSAL  |  PDX00260327</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -685,8 +685,11 @@
       font-weight: 700;
       letter-spacing: -0.035em;
       line-height: 1.05;
-      color: var(--t1);
       margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #fff 0%, #fff 45%, #5e4ff5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .s-subtext {
@@ -1657,7 +1660,7 @@
       .insight-cards { grid-template-columns: 1fr; }
 
       /* Approach steps */
-      .system-steps { grid-template-columns: 1fr; }
+      .system-steps { grid-template-columns: 1fr; gap: 1rem; }
       .step-arrow { display: none; }
 
       /* Levers */
@@ -2838,21 +2841,21 @@
     const tiers = [
       {
         badge:'Midwest Core', title:'Midwest Core',
-        img:'SVG elements /Tier 1.svg',
+        img:'svg/Tier 1.svg',
         states:'IL · WI · IA · MO · KY · IN · MI',
         desc:'Establishing BCU\'s presence across the heartland in a concentrated cluster of ADA-dense markets with strong auto and recreational financing demand.',
         featured: false
       },
       {
         badge:'Major Market Expansion', title:'Major Market Expansion',
-        img:'SVG elements /Tier 2.svg',
+        img:'svg/Tier 2.svg',
         states:'Midwest Core + FL · CA · TX · NY',
         desc:'Adding the highest-density ADA member markets outside the Midwest with states that collectively represent the majority of total ADA membership.',
         featured: false
       },
       {
         badge:'Tier 3', title:'Full National',
-        img:'SVG elements /Tier 3.svg',
+        img:'svg/Tier 3.svg',
         states:'Nationwide Deployment',
         desc:'Full national presence across every ADA member market — maximum reach, sustained frequency, and compounding brand recognition coast to coast.',
         featured: false
